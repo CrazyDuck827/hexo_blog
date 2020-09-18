@@ -7,6 +7,11 @@ categories:
 tags:
     - Linux
     - Xshell
+keywords: 
+    - Xshell
+    - Xshell文件
+    - Xshell文件拖拽
+cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/sdXEYmltC5WiIAjL4S0tQv7PGqlk11xk.png
 ---
 
 ```

@@ -7,6 +7,7 @@ categories:
 tags:
     - Linux
     - Nginx
+cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/zAMpLeDInvEZkBW7eSKlgOpKWd7suxx1.png
 ---
 
 ### Nginx服务器偶尔出现 No input file specified.

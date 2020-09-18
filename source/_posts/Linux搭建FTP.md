@@ -7,6 +7,7 @@ categories:
 tags:
     - Linux
     - FTP
+cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/P6Cqpi8ypvau1mSLeA4NledwC281Z3s7.jpg
 ---
 
 ### vsftpd

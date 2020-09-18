@@ -7,6 +7,11 @@ categories:
 tags:
     - Linux
     - Nginx
+keywords: 
+    - Nginx
+    - Linux
+    - Nginx配置
+cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/zAMpLeDInvEZkBW7eSKlgOpKWd7suxx1.png
 ---
 
 ### 概要

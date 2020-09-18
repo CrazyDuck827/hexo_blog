@@ -7,6 +7,7 @@ categories:
 tags:
     - Linux
     - Shell
+cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/DC4FrMGO2aTaA9QHvXl7XX0Tm7spEwj0.png
 ---
 
 ### shell脚本"syntax error near unexpected token 'fi'"
@@ -22,7 +23,7 @@ tags:
     - 再次执行，正常使用
 
 #### 参考资料
-[解决shell脚本“syntax error near unexpected token `fi'”的问题](https://blog.csdn.net/jsqfengbao/article/details/95597260)
+[解决shell脚本syntax error near unexpected token fi的问题](https://blog.csdn.net/jsqfengbao/article/details/95597260)
 
 -----------------------
 

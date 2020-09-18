@@ -278,13 +278,15 @@ postCalendar: true
 # the Gitalk config，default disabled
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
-  enable: false
-  owner:
-  repo:
+  enable: true
+  owner: crazyduck827
+  repo: https://crazyduck827.github.io/blog_comment
+  id: location.pathname
   oauth:
-    clientId:
-    clientSecret:
-  admin:
+    clientId: f3f84de89164ed19babc
+    clientSecret: 25c82b4ff50940369ee39bd58109a522ce627fa7
+  admin: crazyduck827
+  language: zh-CN
 
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活

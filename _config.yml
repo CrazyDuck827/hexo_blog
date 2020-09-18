@@ -13,8 +13,12 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://crazyduck827.github.io
-root: /
+# github
+#url: https://crazyduck827.github.io
+#root: /
+# gitee
+url: https://crazyduck827.gitee.io/blog
+root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -45,15 +49,15 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: false
-  line_number: true
+  enable: true
+  line_number: false
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
+  theme: 'butterfly'
   line_number: false    # default false
   custom_css:
 
@@ -98,14 +102,15 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/22837916
-theme: hexo-theme-matery
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-    repository: https://github.com/CrazyDuck827/CrazyDuck827.github.io.git
-      branch: master
+  repository: https://gitee.com/CrazyDuck827/blog.git
+#  repository: https://github.com/CrazyDuck827/CrazyDuck827.github.io
+  branch: master
 
 search:
   path: search.xml

@@ -7,6 +7,7 @@ categories:
 tags:
     - PHP
     - Composer
+cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/ns5avppS3yMh73CFjc8pGSU6wZMtCXu1.png
 ---
 
 ### Composer镜像

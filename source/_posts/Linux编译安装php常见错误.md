@@ -7,6 +7,7 @@ categories:
 tags: 
     - Linux
     - PHP
+cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/P6Cqpi8ypvau1mSLeA4NledwC281Z3s7.jpg
 ---
 
 1、configure: error: xslt-config not found. Please reinstall the libxslt >= 1.1.0 distribution

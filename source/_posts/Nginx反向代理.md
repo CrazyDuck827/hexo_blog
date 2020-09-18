@@ -7,6 +7,7 @@ categories: Nginx
 tags:
   - Nginx
   - Linux
+cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/zAMpLeDInvEZkBW7eSKlgOpKWd7suxx1.png
 ---
 
 # Nginx反向代理

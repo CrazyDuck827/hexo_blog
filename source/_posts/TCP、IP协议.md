@@ -7,9 +7,8 @@ tags:
     - TCP
     - Web
     - 网络基础
+cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/7fqLN8A4acX9HKs2zbqOYYvtAe6ILp06.png
 ---
-
-# TCP / IP 协议
 
 ### 概念
 - TCP/IP（Transmission Control Protocol/Internet Protocol，传输控制协议/网际协议）是指能够在多个不同网络间实现信息传输的协议簇。

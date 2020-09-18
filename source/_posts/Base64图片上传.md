@@ -6,6 +6,7 @@ categories:
     - js
 tags:
     - js
+cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/sdXEYmltC5WiIAjL4S0tQv7PGqlk11xk.png
 ---
 
 # base64图片上传
