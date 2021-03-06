@@ -7,6 +7,10 @@ tags:
     - TCP
     - Web
     - 网络基础
+keywords: 
+    - TCP / IP
+    - TCP
+    - IP
 cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/7fqLN8A4acX9HKs2zbqOYYvtAe6ILp06.png
 ---
 
