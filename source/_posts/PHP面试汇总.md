@@ -357,8 +357,6 @@ cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/RPAI
    - 解决：黑白名单
 
 ### 设计思想
-#### sku
-#### jwt
 
 ### Socket
 ### 算法
