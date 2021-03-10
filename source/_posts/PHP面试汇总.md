@@ -58,6 +58,15 @@ cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/RPAI
     > 字符串解析成桉树改为宏展开
     > 使用大块连续内存代替小块破碎内存
 
+#### PHP8新特性
+1. 新增联合类型（Union Types）
+2. 添加了 WeakMap
+3. 添加了 ValueError 类
+4. 新增联合类型（Union Types）
+5. 新增的特性大多是语法糖，主要是JIT
+    JIT是一种编译器策略，它将代码表述为一种中间状态，在运行时将其转换为依赖于体系结构的机器码，并即时执行，在PHP8中，Zend VM不需要解释某些操作码，并且这些指令将直接作为CPU级指令执行
+
+
 #### RESTful API
     互联网应用程序的API设计理念
 #### 加密
@@ -370,7 +379,98 @@ cover: https://cdn.jsdelivr.net/gh/CrazyDuck827/CrazyDuck827.github.io/icon/RPAI
 - 快速排序
         思路分析：选择一个基准元素，通常选择第一个元素或者最后一个元素。通过一趟扫描，将待排序列分成两部分，一部分比基准元素小，一部分大于等于基准元素。此时基准元素在其排好序后的正确位置，然后再用同样的方法递归地排序划分的两部分
 
+-----
+     
+### 常见面试问题
+
+#### Get与post两种方式的区别？
+> 1. 传输方式：
+>    -	get通过URL传递，可见
+>    -	post是通过Request body传递，不可见
+> 2. 传输数据大小：
+>    - get一般传输数据大小不超过2k-4k；
+>    - post 请求传输数据的大小根据php.ini 配置文件设定，也可以无限大。
+> 3. GET产生一个TCP数据包，POST产生两个TCP数据包
+
+#### session与cookie的区别与联系？
+> - 区别
+> 1. 存放位置：session保存在服务器；cookie保存在客户端
+> 2. 存放的形式：session是以对象的形式保存在服务器；cookie以字符串的形式保存在客户端
+> 3. 用途：session适合做客户的身份验证；cookie适合保存用户个人设置，爱好等
+> 4. 路径：session不能区分路径，同一个用户在防问一个网站期间，所有的session在任何地方都可以访问到；而cookie如果设置了路径参数，那么在用一个网站中不能路径下的cookie相互访问不到
+> 5. 安全性：cookie不安全，可以分析存放在本地的cookie并进行cookie欺骗
+> 6. 大小以及数量限制：Cookie有限制，各个浏览器不同。一般认为 Session 没有大小和数量限制
+> - 联系：Session 需要借助 Cookie 才能正常工作，SessionID存放在cookie，当然也可通过get传递SessionID获取已经保存的session内容
+
+#### 为什么session的安全性大于cookie？
+> - sessionID存储在cookie中，若要攻破session首先要攻破cookie；
+> - sessionID是要有人登录，或者启动session_start才会有，所以攻破cookie也不一定能得到sessionID；
+> - 第二次启动session_start后，前一次的sessionID就是失效了，session过期后，sessionID也随之失效
+> - sessionID是加密的
+
+#### echo、print、print_r、printf、var_dump的区别？
+> - echo：语句结构，无返回值
+> - print：是函数，打印字符串，有返回值
+> - printf()：源于C语言中的printf()。该函数输出格式化的字符串
+> - print_r：能打印复合类型，如数组，对象
+> - var_dump:能打印对象数组，并且带数据类型，判断一个变量的类型与长度
+
+#### PHP 中传值与传引用的区别？
+> - 按值传递：函数范围内对值的任何改变在函数外部都会被忽略
+> - 按引用传递：函数范围内对值的任何改变在函数外部也能反映出这些修改
+> - 优缺点：按值传递时，php必须复制值。特别是对于大型的字符串和对象来说，这将会是一个代价很大的操作。按引用传递则不需要复制值，对于性能提高很有好处
+
+#### include和require的区别？
+> - 在失败的时候：include产生一个warning（下面代码正常执行），而require产生直接产生错误中断
+> - include有返回值，require没有
+
+#### 获取客户端和服务端的IP？
+> - 客户端：$_SERVER["REMOTE_ADDR"]
+> - 服务端：$_SERVER["SERVER_ADDR"]
+
+#### PHP 不使用第三个变量实现交换两个变量的值？
+> list($b,$a)=array($a,$b);
+
+#### php-fpm在请求链路的体现？
+> 1. www.example.com
+> 2. Nginx
+> 3. 路由到www.example.com/index.php
+> 4. 加载nginx的fast-cgi模块
+> 5. fast-cgi监听127.0.0.1:9000地址
+> 6. www.example.com/index.php请求到达127.0.0.1:9000
+> 7. php-fpm 监听127.0.0.1:9000
+> 8. php-fpm 接收到请求，启用worker进程处理请求
+> 9. php-fpm 处理完请求，返回给nginx
+> 10. nginx将结果通过http返回给浏览器
+
+#### php-fpm有几种工作模式？
+> PHP-FPM进程管理方式有
+> 1. 动态（Dynamic）:均衡优先，适合小内存服务器，2g左右
+>    - 优点：动态扩容，不浪费系统资源
+>    - 缺点：所有worker都在工作，新的请求到来需要等待创建worker进程，最长等待1s（内部存在一个1s的定时器，去查看，创建进程），频繁启停进程消耗cpu，请求数稳定，不需要频繁销毁
+> 2. 静态（Static）:性能优先， 适合大内存机器
+>    - 优点：不用动态判断负载，提升性能
+>    - 缺点：如果配置成static，只需要考虑max_children数量，数量取决于cpu的个数和应用的响应时间，一次启动固定大小进程浪费系统资源
+> 3. 按需分配（Ondemand）:内存优先，适合微小的内存，2g以下【不推荐】
+>    - 优点：按流量需求创建，不浪费系统资源
+>    - 缺点：因为php-fpm是短连接的，如果每次请求都先建立连接，大流量场景下会使得master进程变得繁忙，浪费cpu，不适合大流量模式
+
+#### 怎么理解 依赖注入(DI)与控制反转(Ioc)？
+
+#### php的弱类型是怎么实现的？
+> php是通过c语言进行实现，但是c语言为强类型，那php的弱语言类型是通过PHP底层设计了一个zval(“Zend value”的缩写)的数据结构,可以用来表示任意类型的PHP值
+> zval结构如下：
+
+属性名	|含义|	默认值
+:--:|:--:|:--:
+refcount__gc|	表示引用计数	|1
+is_ref__gc|	表示是否为引用	|0
+value|	存储变量的值	|
+type|	变量具体的类型	|
+
 ### 参考资料
+
+[PHPer面试2021](https://www.kancloud.cn/martist/phper-will-get-bat-tmd-offer-in-2021)
 
 [垃圾回收机制](https://www.php.net/manual/zh/features.gc.php)
 [PHP 垃圾回收与内存管理指引](https://learnku.com/articles/15582/php-garbage-collection-and-memory-management-guidelines)
